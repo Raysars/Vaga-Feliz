@@ -14,6 +14,10 @@ public class Estacionamento {
         this.QVagasDisponiveis = QVagasDisponiveis;
     }
 
+    public void Estacionar3(int idDaVaga, boolean estaOcupada) {
+
+    }
+
     public List<Carro> getCarros() {
         return Carros;
     }
