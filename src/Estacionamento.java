@@ -15,6 +15,10 @@ public class Estacionamento {
     }
 
     public void Estacionar3(int idDaVaga, boolean estaOcupada) {
+        
+    }
+
+    public void Estacionar2(int idDaVaga, boolean estaOcupada) {
 
     }
 
