@@ -1,52 +1,43 @@
 public class Vaga {
 
-    int idDaVaga;
-    int andarDaVaga;
-    Carro carroEstacionado;
+    private int idVaga;
+    private String numeroDaVaga;
+    private boolean estaOcupada;
+    private Carro carroAtual;
 
-    public Vaga(int idDaVaga, int andarDaVaga, Carro carroEstacionado) {
-        this.idDaVaga = idDaVaga;
-        this.andarDaVaga = andarDaVaga;
-        this.carroEstacionado = carroEstacionado;
+    public Vaga(int idVaga, String numeroDaVaga, boolean estaOcupada, Carro carroAtual) {
+        this.idVaga = idVaga;
+        this.numeroDaVaga = numeroDaVaga;
+        this.estaOcupada = estaOcupada;
+        this.carroAtual = carroAtual;
     }
 
-    //molde da classe
-    public Vaga(int idDaVaga, int andarDaVaga) {
-        this.idDaVaga = idDaVaga;
-        this.andarDaVaga = andarDaVaga;
-        this.carroEstacionado = null;
+    @Override
+    public String toString() {
+        return "Vaga{" + "idVaga=" + idVaga + ", numeroDaVaga='" + numeroDaVaga + '\'' + ", estaOcupada=" + estaOcupada + '}';
     }
 
-    public void setIdDaVaga(int idDaVaga) {
-        this.idDaVaga = idDaVaga;
+    //o metodo altera o estado da vaga para ocupado e coloca um objeto carro dentro
+    public void ocuparVaga(Carro carro) {
+        this.estaOcupada = true;
+        this.carroAtual = carro;
+
+        System.out.println("A vaga" + this.numeroDaVaga + "esta ocupada!");
     }
 
-    public void setAndarDaVaga(int andarDaVaga) {
-        this.andarDaVaga = andarDaVaga;
+    //null remove a referencia do carro que estava ocupando a vaga
+    public void liberarVaga() {
+        this.estaOcupada = false;
+        this.carroAtual = null;
+
+        System.out.println("A vaga" + this.numeroDaVaga + "esta livre!");
     }
 
-    public int getIdDaVaga() {
-        return idDaVaga;
+    public void verificarDisponibilidade() {
+        if (this.estaOcupada) {
+            System.out.println("A vaga" + this.numeroDaVaga + "esta ocupada!");
+        } else {
+            System.out.println("A vaga" + this.numeroDaVaga + "esta desocupada!");
+        }
     }
-
-    public int getAndarDaVaga() {
-        return andarDaVaga;
-    }
-
-    public Carro getCarroEstacionado() {
-        return carroEstacionado;
-    }
-
-    public void setCarroEstacionado(Carro carroEstacionado) {
-        this.carroEstacionado = carroEstacionado;
-    }
-
-    public void VerificarPlaca(String placaDoCarroQueEstaNessaVaga) {
-
-    }
-
-    public boolean estaOcupada() {
-        return !(this.carroEstacionado == null);
-    }
-
 }

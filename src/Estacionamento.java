@@ -1,74 +1,24 @@
-import java.util.List;
+import java.util.Scanner;
 
 public class Estacionamento {
 
-    List<Carro> Carros;
-    int QdeVagas;
-    int VagasPorAndar;
-    int QVagasDisponiveis;
+    private String nome = "Estacionamento - Vaga Feliz";
+    private Vaga[][] listaDeVaga;
+    private int totalDeVaga;
+    private double valorHoraPadrao = 15;
 
-    public Estacionamento(String carro, int qdeVagas, int vagasPorAndar, int QVagasDisponiveis) {
-        Carros = Carros;
-        QdeVagas = qdeVagas;
-        VagasPorAndar = vagasPorAndar;
-        this.QVagasDisponiveis = QVagasDisponiveis;
+    public Estacionamento(String nome, Vaga[][] listaDeVaga, int totalDeVaga, double valorHoraPadrao) {
+        this.nome = nome;
+        this.listaDeVaga = listaDeVaga;
+        this.totalDeVaga = totalDeVaga;
+        this.valorHoraPadrao = valorHoraPadrao;
     }
 
-    public void Estacionar3(int idDaVaga, boolean estaOcupada) {
-        
-    }
+    public void registrarEntrada(Carro carro) {
+        for (int i = 0; i < this.listaDeVaga.length; i++) {
+            for (int r = 0; r < this.listaDeVaga[i].length; r++) {
 
-    public void Estacionar2(int idDaVaga, boolean estaOcupada) {
-
-    }
-
-    public List<Carro> getCarros() {
-        return Carros;
-    }
-
-    public int getQdeVagas() {
-        return QdeVagas;
-    }
-
-    public int getVagasPorAndar() {
-        return VagasPorAndar;
-    }
-
-    public int getQVagasDisponiveis() {
-        return QVagasDisponiveis;
-    }
-
-    public void setCarros(List<Carro> carros) {
-        Carros = carros;
-    }
-
-    public void setQdeVagas(int qdeVagas) {
-        QdeVagas = qdeVagas;
-    }
-
-    public void setVagasPorAndar(int vagasPorAndar) {
-        VagasPorAndar = vagasPorAndar;
-    }
-
-    public void setQVagasDisponiveis(int QVagasDisponiveis) {
-        this.QVagasDisponiveis = QVagasDisponiveis;
-    }
-
-    public void QVagasDisponiveis() {
-        System.out.println("Estoque atual do " + QVagasDisponiveis + "");
-    }
-
-    public void Bucar_Carro() {
-        // System.out.println("Buscar " + Carro + "");
-    }
-
-    public void RetirarCarro() {
-    }
-
-    public void Adicionar_Carro() {
-    }
-
-    public void Estacionar(int idDaVaga, boolean estaOcupada) {
-
+            }
+        }
     }
 }
